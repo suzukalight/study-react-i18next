@@ -1,5 +1,5 @@
 {
-  "Welcome to React": "",
-  "change language": "",
-  "empty key": ""
+  "ようこそ React と react-i18next へ。": "ようこそ React と react-i18next へ。",
+  "定義していない文字列": "",
+  "言語を切り替え": "言語を切り替え"
 }

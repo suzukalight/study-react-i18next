@@ -2,26 +2,19 @@ import React, { useState, useEffect } from 'react';
 import i18n from 'i18next';
 import { initReactI18next, useTranslation } from 'react-i18next';
 
+import enJson from './locales/en.json';
+import jaJson from './locales/ja.json';
+
 import './App.css';
 
 i18n.use(initReactI18next).init({
   resources: {
-    en: {
-      translation: {
-        'Welcome to React': 'Welcome to React and react-i18next.',
-        'change language': 'change language',
-      },
-    },
-    ja: {
-      translation: {
-        'Welcome to React': 'ようこそ React と react-i18next へ。',
-        'change language': '言語を切り替え',
-      },
-    },
+    en: { translation: enJson },
+    ja: { translation: jaJson },
   },
   lng: 'ja',
-  fallbackLng: 'ja',
-  interpolation: { escapeValue: false },
+  fallbackLng: false,
+  returnEmptyString: false,
 });
 
 const App: React.FC = () => {
@@ -35,8 +28,13 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>{t('Welcome to React')}</p>
-        <button onClick={() => setLang(lang === 'en' ? 'ja' : 'en')}>{t('change language')}</button>
+        <p>{t('ようこそ React と react-i18next へ。')}</p>
+        <small>{t('定義していない文字列')}</small>
+        <div>
+          <button onClick={() => setLang(lang === 'en' ? 'ja' : 'en')}>
+            {t('言語を切り替え')}
+          </button>
+        </div>
       </header>
     </div>
   );
