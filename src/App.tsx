@@ -8,6 +8,7 @@ import jaJson from './locales/ja.json';
 import './App.css';
 
 i18n.use(initReactI18next).init({
+  debug: true,
   resources: {
     en: { translation: enJson },
     ja: { translation: jaJson },
